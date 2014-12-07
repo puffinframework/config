@@ -57,6 +57,4 @@ func TestReadConfig(t *testing.T) {
 	config.MustReadConfig(cfg2)
 	assert.Equal(t, "a1", cfg2.A.A1)
 	assert.Equal(t, "cd1", cfg2.C.D.Cd1)
-
-
 }
