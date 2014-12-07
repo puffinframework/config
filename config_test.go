@@ -7,5 +7,5 @@ import (
 )
 
 func TestPFMode(t *testing.T) {
-	assert.Equal(t, "development", config.Mode())
+	assert.Equal(t, "development", config.GetMode())
 }

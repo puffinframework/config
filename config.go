@@ -2,19 +2,14 @@ package config
 
 import (
 	"os"
+	"strings"
 )
 
-var (
-	mode string
-)
-
-func init() {
-	mode = os.Getenv("PF_MODE")
+func GetMode() string {
+	mode := os.Getenv("PF_MODE")
 	if mode == "" {
 		mode = "development"
 	}
+	return strings.ToLower(mode)
 }
 
-func Mode() string {
-	return mode
-}
