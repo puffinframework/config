@@ -6,6 +6,6 @@ import (
 	"testing"
 )
 
-func TestPFMode(t *testing.T) {
+func TestMode(t *testing.T) {
 	assert.Equal(t, "development", config.GetMode())
 }
