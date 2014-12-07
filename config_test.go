@@ -14,5 +14,8 @@ func TestMode(t *testing.T) {
 	assert.Panics(t, func() { config.MustGetMode() })
 
 	os.Setenv("PF_MODE", "test")
-	assert.Equal(t, "test", config.MustGetMode())
+	assert.Equal(t, config.MODE_TEST, config.MustGetMode())
+
+	os.Setenv("PF_MODE", "devELOPmenT")
+	assert.Equal(t, config.MODE_DEVELOPMENT, config.MustGetMode())
 }
