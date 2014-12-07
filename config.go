@@ -14,7 +14,7 @@ const (
 )
 
 var (
-	ErrEnvVartNotSet error = fmt.Errorf("config: %s environment variable is not set", ENV_VAR_NAME)
+	ErrEnvVarNotSet error = fmt.Errorf("config: %s environment variable is not set", ENV_VAR_NAME)
 )
 
 func MustGetMode() string {
@@ -23,5 +23,5 @@ func MustGetMode() string {
 	case MODE_PRODUCTION, MODE_DEVELOPMENT, MODE_TEST:
 		return mode
 	}
-	panic(ErrEnvVartNotSet)
+	panic(ErrEnvVarNotSet)
 }
