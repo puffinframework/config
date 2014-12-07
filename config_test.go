@@ -46,6 +46,7 @@ func TestReadConfig(t *testing.T) {
 	cfg1 := &configAB{}
 	config.MustReadConfig(cfg1)
 	assert.Equal(t, "a1", cfg1.A.A1)
+	assert.Equal(t, []string{"b1", "b2"}, cfg1.B.Bs)
 
 	type configAC struct {
 		A A
@@ -55,6 +56,7 @@ func TestReadConfig(t *testing.T) {
 	cfg2 := &configAC{}
 	config.MustReadConfig(cfg2)
 	assert.Equal(t, "a1", cfg2.A.A1)
+	assert.Equal(t, "cd1", cfg2.C.D.Cd1)
 
 
 }
