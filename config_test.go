@@ -8,7 +8,11 @@ import (
 )
 
 func TestMode(t *testing.T) {
-	assert.Equal(t, "development", config.GetMode())
+	assert.Panics(t, func() { config.MustGetMode() })
+
+	os.Setenv("PF_MODE", "something")
+	assert.Panics(t, func() { config.MustGetMode() })
+
 	os.Setenv("PF_MODE", "test")
-	assert.Equal(t, "test", config.GetMode())
+	assert.Equal(t, "test", config.MustGetMode())
 }
