@@ -2,8 +2,8 @@ package config
 
 import (
 	"fmt"
-	"log"
 	"github.com/BurntSushi/toml"
+	"log"
 	"os"
 	"strings"
 )
