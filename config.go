@@ -16,7 +16,7 @@ const (
 )
 
 var (
-	ErrEnvVarNotSet error = fmt.Errorf("config: %s environment variable is not set", ENV_VAR_NAME)
+	ErrEnvVarNotSet error = fmt.Errorf("config: %s environment variable is not correctly set", ENV_VAR_NAME)
 	ErrReadConfig   error = fmt.Errorf("config: couldn't read config file")
 )
 
