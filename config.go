@@ -35,6 +35,7 @@ func MustReadConfig(config interface{}) {
 	mode := MustGetMode()
 	file := strings.Join([]string{mode, "toml"}, ".")
 	if _, err := toml.DecodeFile(file, config); err != nil {
+		log.Println(err)
 		log.Panic(ErrReadConfig)
 	}
 }
